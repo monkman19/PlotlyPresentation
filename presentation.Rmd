@@ -1,0 +1,28 @@
+---
+title: "My Plotly Presentation"
+author: "Gautam Iyer"
+date: "2026-10-27"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Interactive 3D Topographic Map
+
+Here is a 3D surface plot showing the topographic information of Maunga Whau (Mt Eden) volcano. Click and drag to rotate the plot!
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+# Load the plotly library
+library(plotly)
+
+# Generate a 3D surface plot using the built-in 'volcano' matrix
+fig <- plot_ly(z = ~volcano, type = "surface")
+
+# Add a title to the layout
+fig <- fig %>% layout(title = "Elevation Map of Maunga Whau")
+
+# Display the interactive plot
+fig
+
